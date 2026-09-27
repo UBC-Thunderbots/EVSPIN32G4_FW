@@ -1,0 +1,1816 @@
+{
+  "version": 16,
+  "algorithm": "FOC",
+  "description": "",
+  "workBenchVersion": "6.4.1",
+  "workBenchVersionFileCreation": "6.4.1",
+  "hardwares": {
+    "type": "INVERTER",
+    "inverter": {
+      "hardwareFamily": "INVERTER",
+      "id": "EVSPIN32G4",
+      "label": "EVSPIN32G4",
+      "description": "STSPIN32G4 demonstration board for three-phase brushless motors",
+      "compatibility": [
+        "FOC",
+        "sixStep"
+      ],
+      "descVersion": 4,
+      "contentVersion": "1.1"
+    },
+    "control": {
+      "hardwareFamily": "CONTROL",
+      "mcu": {
+        "id": "STSPIN32G4"
+      },
+      "clockSource": "internal_osc",
+      "clockFrequency": 170,
+      "connectors": [],
+      "features": [
+        {
+          "type": "Button",
+          "name": "StartStopButton",
+          "hwVariants": [
+            {
+              "type": "PushButton",
+              "signals": {
+                "BUTTON_TRIGGER": [
+                  {
+                    "name": "PC13",
+                    "help": {
+                      "en": ""
+                    },
+                    "cost": 0
+                  },
+                  {
+                    "name": "PB10",
+                    "help": {
+                      "en": ""
+                    },
+                    "cost": 0
+                  }
+                ]
+              },
+              "buttonTriggerEdge": "Rising Edge",
+              "buttonGpioConfig": "No Pull up - No Pull down",
+              "help": {
+                "en": ""
+              }
+            }
+          ]
+        },
+        {
+          "name": "SerialPortCommunication",
+          "type": "SerialPortCommunication",
+          "hwVariants": [
+            {
+              "type": "Uart2WiresCommunication",
+              "signals": {
+                "UART_TX": [
+                  {
+                    "name": "PA9",
+                    "help": {
+                      "en": ""
+                    },
+                    "cost": 0
+                  }
+                ],
+                "UART_RX": [
+                  {
+                    "name": "PA10",
+                    "help": {
+                      "en": ""
+                    },
+                    "cost": 0
+                  }
+                ]
+              },
+              "help": {
+                "en": ""
+              }
+            }
+          ]
+        },
+        {
+          "type": "Potentiometer",
+          "name": "Potentiometer",
+          "hwVariants": [
+            {
+              "type": "Potentiometer",
+              "signals": {
+                "POTENTIOMETER_LEVEL": [
+                  {
+                    "name": "PC3",
+                    "help": {
+                      "en": ""
+                    },
+                    "cost": 0
+                  }
+                ]
+              },
+              "potVm": 3.3,
+              "potRmax": 100000,
+              "potLevelMin": 0,
+              "help": {
+                "en": "How to enable this variant"
+              }
+            }
+          ]
+        }
+      ],
+      "id": "EVSPIN32G4",
+      "label": "EVSPIN32G4",
+      "contentVersion": "1.1",
+      "compatibility": [
+        "FOC",
+        "sixStep"
+      ],
+      "descVersion": 4,
+      "description": "STSPIN32G4 demonstration board for three-phase brushless motors",
+      "link": "https://www.st.com/en/evaluation-tools/evspin32g4.html"
+    },
+    "power": [
+      {
+        "motorDrives": [
+          {
+            "name": "M1",
+            "maxRatedVoltage": 75,
+            "minRatedVoltage": 10,
+            "maxRatedCurrent": 20,
+            "maxRatedPower": 1000,
+            "resistorOffset": 0.08,
+            "features": [
+              {
+                "type": "CurrentSensing",
+                "name": "CurrentSensing",
+                "hwVariants": [
+                  {
+                    "type": "ThreeShunt_RawCurrents_SingleEnded_ExternalGain",
+                    "signals": {
+                      "CURRENT_SHUNT_UP": [
+                        {
+                          "name": "PA1",
+                          "help": {
+                            "en": ""
+                          },
+                          "cost": 0
+                        }
+                      ],
+                      "CURRENT_SHUNT_VP": [
+                        {
+                          "name": "PA7",
+                          "help": {
+                            "en": ""
+                          },
+                          "cost": 0
+                        }
+                      ],
+                      "CURRENT_SHUNT_WP": [
+                        {
+                          "name": "PB0",
+                          "help": {
+                            "en": ""
+                          },
+                          "cost": 0
+                        }
+                      ],
+                      "CURRENT_AMPL_U": [
+                        {
+                          "name": "PA2",
+                          "help": {
+                            "en": ""
+                          },
+                          "cost": 0
+                        }
+                      ],
+                      "CURRENT_AMPL_V": [
+                        {
+                          "name": "PA6",
+                          "help": {
+                            "en": ""
+                          },
+                          "cost": 0
+                        },
+                        {
+                          "name": "PA2",
+                          "help": {
+                            "en": ""
+                          },
+                          "cost": 0
+                        }
+                      ],
+                      "CURRENT_AMPL_W": [
+                        {
+                          "name": "PB1",
+                          "help": {
+                            "en": ""
+                          },
+                          "cost": 0
+                        },
+                        {
+                          "name": "PA6",
+                          "help": {
+                            "en": ""
+                          },
+                          "cost": 0
+                        }
+                      ],
+                      "CURRENT_AMPLN_U": [
+                        {
+                          "name": "PA3",
+                          "help": {
+                            "en": ""
+                          },
+                          "cost": 0
+                        }
+                      ],
+                      "CURRENT_AMPLN_V": [
+                        {
+                          "name": "PC5",
+                          "help": {
+                            "en": ""
+                          },
+                          "cost": 0
+                        }
+                      ],
+                      "CURRENT_AMPLN_W": [
+                        {
+                          "name": "PB2",
+                          "help": {
+                            "en": ""
+                          },
+                          "cost": 0
+                        },
+                        {
+                          "name": "PC5",
+                          "help": {
+                            "en": ""
+                          },
+                          "cost": 0
+                        }
+                      ]
+                    },
+                    "amplifyingNetworkImax": 45,
+                    "amplifyingNetworkVm": 3.3,
+                    "amplifyingNetworkPrating": 6,
+                    "offsetNetworkAttenuation": 0.88,
+                    "opAmpGain": 8.333,
+                    "polarizationOffset": 1.65,
+                    "help": {
+                      "en": "Open jumpers JP1 and JP2 located on the bottom side of the board, shunt resistors R31, R32, R35 and R36 must be mounted"
+                    },
+                    "cost": 10,
+                    "shuntResistor": 0.005
+                  },
+                  {
+                    "type": "ThreeShunt_RawCurrents_SingleEnded_InternalGain",
+                    "signals": {
+                      "CURRENT_SHUNT_UP": [
+                        {
+                          "name": "PA1",
+                          "help": {
+                            "en": ""
+                          },
+                          "cost": 0
+                        }
+                      ],
+                      "CURRENT_SHUNT_VP": [
+                        {
+                          "name": "PA7",
+                          "help": {
+                            "en": ""
+                          },
+                          "cost": 0
+                        }
+                      ],
+                      "CURRENT_SHUNT_WP": [
+                        {
+                          "name": "PB0",
+                          "help": {
+                            "en": ""
+                          },
+                          "cost": 0
+                        }
+                      ]
+                    },
+                    "amplifyingNetworkImax": 45.9,
+                    "amplifyingNetworkVm": 3.3,
+                    "amplifyingNetworkPrating": 6,
+                    "offsetNetworkAttenuation": 0.88,
+                    "opAmpGain": 8,
+                    "polarizationOffset": 1.584,
+                    "help": {
+                      "en": "Open jumpers JP1 and JP2 located on the bottom side of the board, shunt resistors R31, R32, R35 and R36 must be mounted"
+                    },
+                    "cost": 10,
+                    "shuntResistor": 0.005
+                  },
+                  {
+                    "type": "SingleShunt_RawCurrents_SingleEnded_ExternalGain",
+                    "signals": {
+                      "CURRENT_SHUNT_P": [
+                        {
+                          "name": "PA7",
+                          "help": {
+                            "en": [
+                              "1. Remove the heatsink and the thermal interposer to simplify the following two steps.",
+                              "2. Close the two jumpers JP1 and JP2 located on the bottom side of the board in proximity of the shunt resistors.",
+                              " Make sure to close both the jumpers for their entire length to ensure good electrical connection and to avoid malfunctions.",
+                              "3. Disconnect shunt resistors R31, R32, R35 and R36.",
+                              "4. Mount again the heatsink with thermal interposer"
+                            ]
+                          },
+                          "cost": 10
+                        }
+                      ],
+                      "CURRENT_AMPL": [
+                        {
+                          "name": "PA6",
+                          "help": {
+                            "en": ""
+                          },
+                          "cost": 0
+                        }
+                      ],
+                      "CURRENT_AMPLN": [
+                        {
+                          "name": "PC5",
+                          "help": {
+                            "en": ""
+                          },
+                          "cost": 0
+                        }
+                      ]
+                    },
+                    "amplifyingNetworkImax": 45,
+                    "amplifyingNetworkVm": 3.3,
+                    "amplifyingNetworkPrating": 6,
+                    "offsetNetworkAttenuation": 0.88,
+                    "opAmpGain": 8.333,
+                    "polarizationOffset": 1.65,
+                    "help": {
+                      "en": [
+                        "1. Remove the heatsink and the thermal interposer to simplify the following two steps.",
+                        "2. Close the two jumpers JP1 and JP2 located on the bottom side of the board in proximity of the shunt resistors.",
+                        " Make sure to close both the jumpers for their entire length to ensure good electrical connection and to avoid malfunctions.",
+                        "3. Disconnect shunt resistors R31, R32, R35 and R36.",
+                        "4. Mount again the heatsink with thermal interposer"
+                      ]
+                    },
+                    "cost": 10,
+                    "shuntResistor": 0.005
+                  },
+                  {
+                    "type": "SingleShunt_RawCurrents_SingleEnded_InternalGain",
+                    "signals": {
+                      "CURRENT_SHUNT_P": [
+                        {
+                          "name": "PA7",
+                          "help": {
+                            "en": [
+                              "1. Remove the heatsink and the thermal interposer to simplify the following two steps.",
+                              "2. Close the two jumpers JP1 and JP2 located on the bottom side of the board in proximity of the shunt resistors.",
+                              " Make sure to close both the jumpers for their entire length to ensure good electrical connection and to avoid malfunctions.",
+                              "3. Disconnect shunt resistors R31, R32, R35 and R36.",
+                              "4. Mount again the heatsink with thermal interposer"
+                            ]
+                          },
+                          "cost": 0
+                        }
+                      ]
+                    },
+                    "amplifyingNetworkImax": 45.9,
+                    "amplifyingNetworkVm": 3.3,
+                    "amplifyingNetworkPrating": 6,
+                    "offsetNetworkAttenuation": 0.88,
+                    "opAmpGain": 8,
+                    "polarizationOffset": 1.584,
+                    "help": {
+                      "en": [
+                        "1. Remove the heatsink and the thermal interposer to simplify the following two steps.",
+                        "2. Close the two jumpers JP1 and JP2 located on the bottom side of the board in proximity of the shunt resistors.",
+                        " Make sure to close both the jumpers for their entire length to ensure good electrical connection and to avoid malfunctions.",
+                        "3. Disconnect shunt resistors R31, R32, R35 and R36.",
+                        "4. Mount again the heatsink with thermal interposer"
+                      ]
+                    },
+                    "cost": 10,
+                    "shuntResistor": 0.005
+                  }
+                ],
+                "tRise": 61
+              },
+              {
+                "type": "PhaseVoltageGeneration",
+                "name": "PhaseVoltageGeneration",
+                "hwVariants": [
+                  {
+                    "type": "PoweringHighAndLowSides",
+                    "signals": {
+                      "GD_CHU_H": [
+                        {
+                          "name": "GHS1",
+                          "help": {
+                            "en": ""
+                          },
+                          "cost": 0
+                        }
+                      ],
+                      "GD_CHV_H": [
+                        {
+                          "name": "GHS2",
+                          "help": {
+                            "en": ""
+                          },
+                          "cost": 0
+                        }
+                      ],
+                      "GD_CHW_H": [
+                        {
+                          "name": "GHS3",
+                          "help": {
+                            "en": ""
+                          },
+                          "cost": 0
+                        }
+                      ],
+                      "GD_CHU_L": [
+                        {
+                          "name": "GLS1",
+                          "help": {
+                            "en": ""
+                          },
+                          "cost": 0
+                        }
+                      ],
+                      "GD_CHV_L": [
+                        {
+                          "name": "GLS2",
+                          "help": {
+                            "en": ""
+                          },
+                          "cost": 0
+                        }
+                      ],
+                      "GD_CHW_L": [
+                        {
+                          "name": "GLS3",
+                          "help": {
+                            "en": ""
+                          },
+                          "cost": 0
+                        }
+                      ]
+                    },
+                    "deadTime": 1000,
+                    "help": {
+                      "en": ""
+                    }
+                  }
+                ],
+                "driverName": "G4_COMPLEX_LP_DRIVER",
+                "driverPN": "STSPIN32G4",
+                "tNoise": 1200,
+                "minDeadTime": 500,
+                "maxSwitchingFreq": 100
+              },
+              {
+                "type": "SpeedAndPositionSensing",
+                "name": "SpeedAndPositionSensing",
+                "hwVariants": [
+                  {
+                    "type": "HallEffectSensor",
+                    "signals": {
+                      "HALLSENSOR_H1": [
+                        {
+                          "name": "PB6",
+                          "help": {
+                            "en": "Replace R81 with 330 ohm resistor."
+                          },
+                          "cost": 10
+                        }
+                      ],
+                      "HALLSENSOR_H2": [
+                        {
+                          "name": "PB7",
+                          "help": {
+                            "en": "Replace R82 with 330 ohm resistor."
+                          },
+                          "cost": 10
+                        }
+                      ],
+                      "HALLSENSOR_H3": [
+                        {
+                          "name": "PB8-BOOT0",
+                          "help": {
+                            "en": "Replace R83 with 330 ohm resistor."
+                          },
+                          "cost": 10
+                        }
+                      ]
+                    },
+                    "help": {
+                      "en": [
+                        "The jumpers R84, R87 and R89 on the bottom side of the board, allow to select the sensors supply voltage (only one solder jumper must be mounted).",
+                        " Refer to the documentation of the board."
+                      ]
+                    },
+                    "cost": 10
+                  },
+                  {
+                    "type": "QuadratureEncoderRelative",
+                    "signals": {
+                      "QENC_A": [
+                        {
+                          "name": "PB6",
+                          "help": {
+                            "en": "Replace R81 with 330 ohm resistor."
+                          },
+                          "cost": 10
+                        }
+                      ],
+                      "QENC_B": [
+                        {
+                          "name": "PB7",
+                          "help": {
+                            "en": "Replace R82 with 330 ohm resistor."
+                          },
+                          "cost": 10
+                        }
+                      ]
+                    },
+                    "help": {
+                      "en": [
+                        "The jumpers R84, R87 and R89 on the bottom side of the board, allow to select the sensors supply voltage (only one solder jumper must be mounted).",
+                        "Refer to the documentation of the board."
+                      ]
+                    },
+                    "cost": 10
+                  },
+                  {
+                    "type": "QuadratureEncoderAbsolute",
+                    "signals": {
+                      "QENC_A": [
+                        {
+                          "name": "PB6",
+                          "help": {
+                            "en": "Replace R81 with 330 ohm resistor."
+                          },
+                          "cost": 10
+                        }
+                      ],
+                      "QENC_B": [
+                        {
+                          "name": "PB7",
+                          "help": {
+                            "en": "Replace R82 with 330 ohm resistor."
+                          },
+                          "cost": 10
+                        }
+                      ],
+                      "QENC_Z": [
+                        {
+                          "name": "PB8-BOOT0",
+                          "help": {
+                            "en": "Replace R83 with 330 ohm resistor."
+                          },
+                          "cost": 10
+                        }
+                      ]
+                    },
+                    "help": {
+                      "en": [
+                        "The jumpers R84, R87 and R89 on the bottom side of the board, allow to select the sensors supply voltage (only one solder jumper must be mounted).",
+                        "Refer to the documentation of the board."
+                      ]
+                    },
+                    "cost": 10
+                  },
+                  {
+                    "type": "BEMFSensingADCFixedDivider",
+                    "signals": {
+                      "BEMF_U": [
+                        {
+                          "name": "PC0",
+                          "help": {
+                            "en": ""
+                          },
+                          "cost": 0
+                        }
+                      ],
+                      "BEMF_V": [
+                        {
+                          "name": "PC1",
+                          "help": {
+                            "en": ""
+                          },
+                          "cost": 0
+                        }
+                      ],
+                      "BEMF_W": [
+                        {
+                          "name": "PC2",
+                          "help": {
+                            "en": ""
+                          },
+                          "cost": 0
+                        }
+                      ]
+                    },
+                    "dividingNetworkR1": 95000,
+                    "dividingNetworkR2": 3900,
+                    "help": {
+                      "en": "enabled by default"
+                    }
+                  }
+                ]
+              },
+              {
+                "type": "VBusSensing",
+                "name": "VBusSensing",
+                "hwVariants": [
+                  {
+                    "type": "VBusSensing",
+                    "signals": {
+                      "VBUS": [
+                        {
+                          "name": "PA0",
+                          "help": {
+                            "en": ""
+                          },
+                          "cost": 0
+                        }
+                      ]
+                    },
+                    "busVoltageDivider": 25,
+                    "busVoltageDividerR1": 72.3,
+                    "busVoltageDividerR2": 3.01,
+                    "help": {
+                      "en": ""
+                    }
+                  }
+                ],
+                "busVoltageDivider": 25
+              },
+              {
+                "type": "TemperatureSensing",
+                "name": "TemperatureSensing",
+                "hwVariants": [
+                  {
+                    "type": "NTCThermistor",
+                    "signals": {
+                      "TEMPERATURE_NTC": [
+                        {
+                          "name": "PC4",
+                          "help": {
+                            "en": ""
+                          },
+                          "cost": 0
+                        }
+                      ]
+                    },
+                    "v0": 1750,
+                    "t0": 50,
+                    "gain": 25,
+                    "maxSensorTemperature": 100,
+                    "help": {
+                      "en": ""
+                    }
+                  }
+                ]
+              },
+              {
+                "type": "DriverProtection",
+                "name": "ProtectionDriverSTSPING4",
+                "hwVariants": [
+                  {
+                    "type": "SingleErrorTrigger_FixedReference",
+                    "signals": {
+                      "DP_TRIGGER": [
+                        {
+                          "name": "PE15",
+                          "help": {
+                            "en": "Factory default."
+                          },
+                          "cost": 0
+                        }
+                      ]
+                    },
+                    "DPSignalPolarity": "Active low",
+                    "DPTriggerFilterDuration": 140,
+                    "help": {
+                      "en": "How to enable this variant"
+                    }
+                  }
+                ]
+              }
+            ]
+          }
+        ],
+        "hardwareFamily": "POWER",
+        "id": "EVSPIN32G4",
+        "compatibility": [
+          "FOC",
+          "sixStep"
+        ],
+        "descVersion": 4,
+        "description": "STSPIN32G4 demonstration board for three-phase brushless motors",
+        "contentVersion": "1.1",
+        "label": "EVSPIN32G4",
+        "link": "https://www.st.com/en/evaluation-tools/evspin32g4.html"
+      }
+    ],
+    "motor": [
+      {
+        "polePairs": 8,
+        "id": "user.DF45L024048-A2",
+        "label": "DF45L024048-A2",
+        "hardwareFamily": "MOTOR",
+        "description": "Nanotec DF45L024048-A2 BLDC",
+        "compatibility": [
+          "FOC",
+          "sixStep"
+        ],
+        "nominalCurrent": 9.5,
+        "nominalDCVoltage": 24,
+        "rs": 0.31,
+        "ls": 0.11,
+        "magneticStructure": {
+          "type": "SM-PMSM"
+        },
+        "BEmfConstant": 3.05,
+        "inertia": 4,
+        "friction": 16,
+        "maxRatedSpeed": 4840,
+        "hallSensor": {
+          "sensorsDisplacement": 120,
+          "placementElectricalAngle": 300
+        }
+      }
+    ],
+    "connections": [
+      {
+        "ctrlConn": 0,
+        "power": 0,
+        "drive": 0,
+        "motor": 0
+      }
+    ],
+    "constrains": {
+      "motors": [
+        {
+          "motor": "M1",
+          "features": [
+            {
+              "name": "CurrentSensing",
+              "type": "CurrentSensing",
+              "hwVariants": [
+                {
+                  "name": "ThreeShunt_RawCurrents_SingleEnded_ExternalGain",
+                  "swVariants": [
+                    {
+                      "name": "DualOPAMPs",
+                      "solutions": [
+                        {
+                          "ip": [
+                            "OPAMP1",
+                            "OPAMP2"
+                          ],
+                          "sharedSignal": "V",
+                          "signals": [
+                            {
+                              "name": "CURRENT_SHUNT_UP",
+                              "pin": "PA1",
+                              "peripheral": "OPAMP1_VINP",
+                              "help": ""
+                            },
+                            {
+                              "name": "CURRENT_AMPLN_U",
+                              "pin": "PA3",
+                              "peripheral": "OPAMP1_VINM",
+                              "help": ""
+                            },
+                            {
+                              "name": "CURRENT_AMPL_U",
+                              "pin": "PA2",
+                              "peripheral": "OPAMP1_VOUT",
+                              "help": ""
+                            },
+                            {
+                              "name": "CURRENT_SHUNT_WP",
+                              "pin": "PB0",
+                              "peripheral": "OPAMP2_VINP",
+                              "help": ""
+                            },
+                            {
+                              "name": "CURRENT_AMPLN_W",
+                              "pin": "PC5",
+                              "peripheral": "OPAMP2_VINM",
+                              "help": ""
+                            },
+                            {
+                              "name": "CURRENT_AMPL_W",
+                              "pin": "PA6",
+                              "peripheral": "OPAMP2_VOUT",
+                              "help": ""
+                            },
+                            {
+                              "name": "CURRENT_SHUNT_VP",
+                              "pin": "PA7",
+                              "peripheral": "OPAMP1_VINP",
+                              "help": ""
+                            },
+                            {
+                              "name": "CURRENT_AMPLN_V",
+                              "pin": "PC5",
+                              "peripheral": "OPAMP1_VINM",
+                              "help": ""
+                            },
+                            {
+                              "name": "CURRENT_AMPL_V",
+                              "pin": "PA2",
+                              "peripheral": "OPAMP1_VOUT",
+                              "help": ""
+                            },
+                            {
+                              "name": "CURRENT_SHUNT_VP",
+                              "pin": "PA7",
+                              "peripheral": "OPAMP2_VINP",
+                              "help": ""
+                            },
+                            {
+                              "name": "CURRENT_AMPLN_V",
+                              "pin": "PC5",
+                              "peripheral": "OPAMP2_VINM",
+                              "help": ""
+                            },
+                            {
+                              "name": "CURRENT_AMPL_V",
+                              "pin": "PA6",
+                              "peripheral": "OPAMP2_VOUT",
+                              "help": ""
+                            }
+                          ],
+                          "cost": 0,
+                          "ADCVariants": [
+                            {
+                              "name": "OPDualADCs",
+                              "solutions": [
+                                {
+                                  "ip": [
+                                    "ADC1",
+                                    "ADC2"
+                                  ],
+                                  "signals": [
+                                    {
+                                      "name": "OPAMP1_OUT",
+                                      "pin": "PA2",
+                                      "peripheral": "ADC1_IN3",
+                                      "help": ""
+                                    },
+                                    {
+                                      "name": "OPAMP2_OUT",
+                                      "pin": "PA6",
+                                      "peripheral": "ADC2_IN3",
+                                      "help": ""
+                                    }
+                                  ],
+                                  "cost": 0
+                                }
+                              ]
+                            }
+                          ]
+                        }
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "name": "ThreeShunt_RawCurrents_SingleEnded_InternalGain",
+                  "swVariants": [
+                    {
+                      "name": "DualOPAMPs",
+                      "solutions": [
+                        {
+                          "ip": [
+                            "OPAMP1",
+                            "OPAMP2"
+                          ],
+                          "sharedSignal": "V",
+                          "signals": [
+                            {
+                              "name": "CURRENT_SHUNT_UP",
+                              "pin": "PA1",
+                              "peripheral": "OPAMP1_VINP",
+                              "help": ""
+                            },
+                            {
+                              "name": "CURRENT_SHUNT_WP",
+                              "pin": "PB0",
+                              "peripheral": "OPAMP2_VINP",
+                              "help": ""
+                            },
+                            {
+                              "name": "CURRENT_SHUNT_VP",
+                              "pin": "PA7",
+                              "peripheral": "OPAMP1_VINP",
+                              "help": ""
+                            },
+                            {
+                              "name": "CURRENT_SHUNT_VP",
+                              "pin": "PA7",
+                              "peripheral": "OPAMP2_VINP",
+                              "help": ""
+                            }
+                          ],
+                          "cost": 0,
+                          "ADCVariants": [
+                            {
+                              "name": "OPDualADCs",
+                              "solutions": [
+                                {
+                                  "ip": [
+                                    "ADC1",
+                                    "ADC2"
+                                  ],
+                                  "signals": [
+                                    {
+                                      "name": "OPAMP1_OUT",
+                                      "pin": "PA2",
+                                      "peripheral": "ADC1_IN3",
+                                      "help": ""
+                                    },
+                                    {
+                                      "name": "OPAMP2_OUT",
+                                      "pin": "PA6",
+                                      "peripheral": "ADC2_IN3",
+                                      "help": ""
+                                    }
+                                  ],
+                                  "cost": 0
+                                }
+                              ]
+                            }
+                          ]
+                        }
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "name": "SingleShunt_RawCurrents_SingleEnded_ExternalGain",
+                  "swVariants": [
+                    {
+                      "name": "SingleOPAMP",
+                      "solutions": [
+                        {
+                          "ip": [
+                            "OPAMP2"
+                          ],
+                          "signals": [
+                            {
+                              "name": "CURRENT_SHUNT_P",
+                              "pin": "PA7",
+                              "peripheral": "OPAMP2_VINP",
+                              "help": {
+                                "en": [
+                                  "1. Remove the heatsink and the thermal interposer to simplify the following two steps.",
+                                  "2. Close the two jumpers JP1 and JP2 located on the bottom side of the board in proximity of the shunt resistors.",
+                                  " Make sure to close both the jumpers for their entire length to ensure good electrical connection and to avoid malfunctions.",
+                                  "3. Disconnect shunt resistors R31, R32, R35 and R36.",
+                                  "4. Mount again the heatsink with thermal interposer"
+                                ]
+                              }
+                            },
+                            {
+                              "name": "CURRENT_AMPLN",
+                              "pin": "PC5",
+                              "peripheral": "OPAMP2_VINM",
+                              "help": ""
+                            },
+                            {
+                              "name": "CURRENT_AMPL",
+                              "pin": "PA6",
+                              "peripheral": "OPAMP2_VOUT",
+                              "help": ""
+                            }
+                          ],
+                          "cost": 10,
+                          "ADCVariants": [
+                            {
+                              "name": "SingleWire",
+                              "solutions": [
+                                {
+                                  "ip": [
+                                    "ADC2"
+                                  ],
+                                  "signals": [
+                                    {
+                                      "name": "OPAMP2_OUT",
+                                      "pin": "PA6",
+                                      "peripheral": "ADC2_IN3",
+                                      "help": ""
+                                    }
+                                  ],
+                                  "cost": 0
+                                }
+                              ]
+                            }
+                          ]
+                        }
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "name": "SingleShunt_RawCurrents_SingleEnded_InternalGain",
+                  "swVariants": [
+                    {
+                      "name": "SingleOPAMP",
+                      "solutions": [
+                        {
+                          "ip": [
+                            "OPAMP1"
+                          ],
+                          "signals": [
+                            {
+                              "name": "CURRENT_SHUNT_P",
+                              "pin": "PA7",
+                              "peripheral": "OPAMP1_VINP",
+                              "help": ""
+                            }
+                          ],
+                          "cost": 0,
+                          "ADCVariants": [
+                            {
+                              "name": "SingleWire",
+                              "solutions": [
+                                {
+                                  "ip": [
+                                    "ADC1"
+                                  ],
+                                  "signals": [
+                                    {
+                                      "name": "OPAMP1_OUT",
+                                      "pin": "VPOPAMP1",
+                                      "peripheral": "ADC1_IN_VPOPAMP1",
+                                      "help": ""
+                                    }
+                                  ],
+                                  "cost": 0
+                                },
+                                {
+                                  "ip": [
+                                    "ADC1"
+                                  ],
+                                  "signals": [
+                                    {
+                                      "name": "OPAMP1_OUT",
+                                      "pin": "PA2",
+                                      "peripheral": "ADC1_IN3",
+                                      "help": ""
+                                    }
+                                  ],
+                                  "cost": 0
+                                }
+                              ]
+                            }
+                          ]
+                        },
+                        {
+                          "ip": [
+                            "OPAMP2"
+                          ],
+                          "signals": [
+                            {
+                              "name": "CURRENT_SHUNT_P",
+                              "pin": "PA7",
+                              "peripheral": "OPAMP2_VINP",
+                              "help": ""
+                            }
+                          ],
+                          "cost": 0,
+                          "ADCVariants": [
+                            {
+                              "name": "SingleWire",
+                              "solutions": [
+                                {
+                                  "ip": [
+                                    "ADC2"
+                                  ],
+                                  "signals": [
+                                    {
+                                      "name": "OPAMP2_OUT",
+                                      "pin": "PA6",
+                                      "peripheral": "ADC2_IN3",
+                                      "help": ""
+                                    }
+                                  ],
+                                  "cost": 0
+                                },
+                                {
+                                  "ip": [
+                                    "ADC2"
+                                  ],
+                                  "signals": [
+                                    {
+                                      "name": "OPAMP2_OUT",
+                                      "pin": "VPOPAMP2",
+                                      "peripheral": "ADC2_IN_VPOPAMP2",
+                                      "help": ""
+                                    }
+                                  ],
+                                  "cost": 0
+                                }
+                              ]
+                            }
+                          ]
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "name": "OverCurrentProtection",
+              "type": "OverCurrentProtection",
+              "hwVariants": [
+                {
+                  "name": "ThreeShunt_RawCurrents_Protection_IntRef",
+                  "swVariants": [
+                    {
+                      "name": "IndependentWires",
+                      "independentWires": {
+                        "CURRENT_SHUNT_UP": [
+                          {
+                            "ip": "COMP1",
+                            "pin": "PA1",
+                            "peripheral": "COMP1_INP",
+                            "help": "",
+                            "cost": 0
+                          }
+                        ],
+                        "CURRENT_SHUNT_VP": [
+                          {
+                            "ip": "COMP2",
+                            "pin": "PA7",
+                            "peripheral": "COMP2_INP",
+                            "help": "",
+                            "cost": 0
+                          }
+                        ],
+                        "CURRENT_SHUNT_WP": [
+                          {
+                            "ip": "COMP4",
+                            "pin": "PB0",
+                            "peripheral": "COMP4_INP",
+                            "help": "",
+                            "cost": 0
+                          }
+                        ]
+                      }
+                    }
+                  ]
+                },
+                {
+                  "name": "SingleShunt_RawCurrents_Protection_IntRef",
+                  "swVariants": [
+                    {
+                      "name": "IndependentWires",
+                      "independentWires": {
+                        "CURRENT_SHUNT_P": [
+                          {
+                            "ip": "COMP2",
+                            "pin": "PA7",
+                            "peripheral": "COMP2_INP",
+                            "help": "",
+                            "cost": 0
+                          }
+                        ]
+                      }
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "name": "PhaseVoltageGeneration",
+              "type": "PhaseVoltageGeneration",
+              "hwVariants": [
+                {
+                  "name": "PoweringHighAndLowSides",
+                  "swVariants": [
+                    {
+                      "name": "SingleTimer",
+                      "solutions": [
+                        {
+                          "ip": [
+                            "DRV1"
+                          ],
+                          "signals": [
+                            {
+                              "name": "GD_CHU_H",
+                              "pin": "GHS1",
+                              "peripheral": "DRV1_CH1",
+                              "help": ""
+                            },
+                            {
+                              "name": "GD_CHV_H",
+                              "pin": "GHS2",
+                              "peripheral": "DRV1_CH2",
+                              "help": ""
+                            },
+                            {
+                              "name": "GD_CHW_H",
+                              "pin": "GHS3",
+                              "peripheral": "DRV1_CH3",
+                              "help": ""
+                            },
+                            {
+                              "name": "GD_CHU_L",
+                              "pin": "GLS1",
+                              "peripheral": "DRV1_CH1N",
+                              "help": ""
+                            },
+                            {
+                              "name": "GD_CHV_L",
+                              "pin": "GLS2",
+                              "peripheral": "DRV1_CH2N",
+                              "help": ""
+                            },
+                            {
+                              "name": "GD_CHW_L",
+                              "pin": "GLS3",
+                              "peripheral": "DRV1_CH3N",
+                              "help": ""
+                            }
+                          ],
+                          "cost": 0
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "name": "SpeedAndPositionSensing",
+              "type": "SpeedAndPositionSensing",
+              "hwVariants": [
+                {
+                  "name": "HallEffectSensor",
+                  "swVariants": [
+                    {
+                      "name": "SingleTimer",
+                      "solutions": [
+                        {
+                          "ip": [
+                            "TIM4"
+                          ],
+                          "signals": [
+                            {
+                              "name": "HALLSENSOR_H1",
+                              "pin": "PB6",
+                              "peripheral": "TIM4_CH1",
+                              "help": {
+                                "en": [
+                                  "Replace R81 with 330 ohm resistor."
+                                ]
+                              }
+                            },
+                            {
+                              "name": "HALLSENSOR_H2",
+                              "pin": "PB7",
+                              "peripheral": "TIM4_CH2",
+                              "help": {
+                                "en": [
+                                  "Replace R82 with 330 ohm resistor."
+                                ]
+                              }
+                            },
+                            {
+                              "name": "HALLSENSOR_H3",
+                              "pin": "PB8-BOOT0",
+                              "peripheral": "TIM4_CH3",
+                              "help": {
+                                "en": [
+                                  "Replace R83 with 330 ohm resistor."
+                                ]
+                              }
+                            }
+                          ],
+                          "cost": 30
+                        }
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "name": "QuadratureEncoderRelative",
+                  "swVariants": [
+                    {
+                      "name": "SingleTimer",
+                      "solutions": [
+                        {
+                          "ip": [
+                            "TIM4"
+                          ],
+                          "signals": [
+                            {
+                              "name": "QENC_A",
+                              "pin": "PB6",
+                              "peripheral": "TIM4_CH1",
+                              "help": {
+                                "en": [
+                                  "Replace R81 with 330 ohm resistor."
+                                ]
+                              }
+                            },
+                            {
+                              "name": "QENC_B",
+                              "pin": "PB7",
+                              "peripheral": "TIM4_CH2",
+                              "help": {
+                                "en": [
+                                  "Replace R82 with 330 ohm resistor."
+                                ]
+                              }
+                            }
+                          ],
+                          "cost": 20
+                        }
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "name": "QuadratureEncoderAbsolute",
+                  "swVariants": [
+                    {
+                      "name": "SingleTimerAndGPIOs",
+                      "solutions": [
+                        {
+                          "ip": [
+                            "TIM4"
+                          ],
+                          "signals": [
+                            {
+                              "name": "QENC_A",
+                              "pin": "PB6",
+                              "peripheral": "TIM4_CH1",
+                              "help": {
+                                "en": [
+                                  "Replace R81 with 330 ohm resistor."
+                                ]
+                              }
+                            },
+                            {
+                              "name": "QENC_B",
+                              "pin": "PB7",
+                              "peripheral": "TIM4_CH2",
+                              "help": {
+                                "en": [
+                                  "Replace R82 with 330 ohm resistor."
+                                ]
+                              }
+                            }
+                          ],
+                          "cost": 20
+                        }
+                      ],
+                      "independentWires": {
+                        "QENC_Z": [
+                          {
+                            "ip": "GPIO",
+                            "pin": "PB8-BOOT0",
+                            "peripheral": "GPIO_Output",
+                            "help": {
+                              "en": [
+                                "Replace R83 with 330 ohm resistor."
+                              ]
+                            },
+                            "cost": 10
+                          }
+                        ]
+                      }
+                    }
+                  ]
+                },
+                {
+                  "name": "BEMFSensingADCFixedDivider",
+                  "swVariants": [
+                    {
+                      "name": "IndependentWires",
+                      "independentWires": {
+                        "BEMF_U": [
+                          {
+                            "ip": "ADC2",
+                            "pin": "PC0",
+                            "peripheral": "ADC2_IN6",
+                            "help": "",
+                            "cost": 0
+                          },
+                          {
+                            "ip": "ADC1",
+                            "pin": "PC0",
+                            "peripheral": "ADC1_IN6",
+                            "help": "",
+                            "cost": 0
+                          }
+                        ],
+                        "BEMF_V": [
+                          {
+                            "ip": "ADC1",
+                            "pin": "PC1",
+                            "peripheral": "ADC1_IN7",
+                            "help": "",
+                            "cost": 0
+                          },
+                          {
+                            "ip": "ADC2",
+                            "pin": "PC1",
+                            "peripheral": "ADC2_IN7",
+                            "help": "",
+                            "cost": 0
+                          }
+                        ],
+                        "BEMF_W": [
+                          {
+                            "ip": "ADC2",
+                            "pin": "PC2",
+                            "peripheral": "ADC2_IN8",
+                            "help": "",
+                            "cost": 0
+                          },
+                          {
+                            "ip": "ADC1",
+                            "pin": "PC2",
+                            "peripheral": "ADC1_IN8",
+                            "help": "",
+                            "cost": 0
+                          }
+                        ]
+                      }
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "name": "VBusSensing",
+              "type": "VBusSensing",
+              "hwVariants": [
+                {
+                  "name": "VBusSensing",
+                  "swVariants": [
+                    {
+                      "name": "SingleWire",
+                      "solutions": [
+                        {
+                          "ip": [
+                            "ADC1"
+                          ],
+                          "signals": [
+                            {
+                              "name": "VBUS",
+                              "pin": "PA0",
+                              "peripheral": "ADC1_IN1",
+                              "help": ""
+                            }
+                          ],
+                          "cost": 0
+                        },
+                        {
+                          "ip": [
+                            "ADC2"
+                          ],
+                          "signals": [
+                            {
+                              "name": "VBUS",
+                              "pin": "PA0",
+                              "peripheral": "ADC2_IN1",
+                              "help": ""
+                            }
+                          ],
+                          "cost": 0
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "name": "TemperatureSensing",
+              "type": "TemperatureSensing",
+              "hwVariants": [
+                {
+                  "name": "NTCThermistor",
+                  "swVariants": [
+                    {
+                      "name": "SingleWire",
+                      "solutions": [
+                        {
+                          "ip": [
+                            "ADC2"
+                          ],
+                          "signals": [
+                            {
+                              "name": "TEMPERATURE_NTC",
+                              "pin": "PC4",
+                              "peripheral": "ADC2_IN5",
+                              "help": ""
+                            }
+                          ],
+                          "cost": 0
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "name": "ProtectionDriverSTSPING4",
+              "type": "DriverProtection",
+              "hwVariants": [
+                {
+                  "name": "SingleErrorTrigger_FixedReference",
+                  "swVariants": [
+                    {
+                      "name": "SingleWire",
+                      "solutions": [
+                        {
+                          "ip": [
+                            "TIM1"
+                          ],
+                          "signals": [
+                            {
+                              "name": "DP_TRIGGER",
+                              "pin": "PE15",
+                              "peripheral": "TIM1_BKIN",
+                              "help": ""
+                            }
+                          ],
+                          "cost": 0
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        }
+      ],
+      "features": [
+        {
+          "name": "Potentiometer",
+          "type": "Potentiometer",
+          "hwVariants": [
+            {
+              "name": "Potentiometer",
+              "swVariants": [
+                {
+                  "name": "SingleWire",
+                  "solutions": [
+                    {
+                      "ip": [
+                        "ADC1"
+                      ],
+                      "signals": [
+                        {
+                          "name": "POTENTIOMETER_LEVEL",
+                          "pin": "PC3",
+                          "peripheral": "ADC1_IN9",
+                          "help": ""
+                        }
+                      ],
+                      "cost": 0
+                    },
+                    {
+                      "ip": [
+                        "ADC2"
+                      ],
+                      "signals": [
+                        {
+                          "name": "POTENTIOMETER_LEVEL",
+                          "pin": "PC3",
+                          "peripheral": "ADC2_IN9",
+                          "help": ""
+                        }
+                      ],
+                      "cost": 0
+                    }
+                  ]
+                }
+              ],
+              "type": "Potentiometer"
+            }
+          ]
+        }
+      ],
+      "errors": [],
+      "warnings": [],
+      "info": [],
+      "critical": []
+    }
+  },
+  "checkList": {},
+  "details": {
+    "steps": {
+      "motor_0": {
+        "label": "",
+        "description": "",
+        "polePairs": "Number.NaN",
+        "mmsType": "",
+        "rs": "Number.NaN",
+        "ls": "Number.NaN",
+        "mmsLd_lq_ratio": "Number.NaN",
+        "maxCurrent": "Number.NaN",
+        "maxDCVoltage": "Number.NaN",
+        "BEmfConstant": "Number.NaN",
+        "inertia": "Number.NaN",
+        "friction": "Number.NaN",
+        "maxRatedSpeed": "Number.NaN",
+        "hasHallSensor": false,
+        "hallSensor": {
+          "sensorsDisplacement": "Number.NaN",
+          "placementElectricalAngle": "Number.NaN"
+        },
+        "hasQuadratureEncoder": true,
+        "quadratureEncoder": {
+          "pulsesPerMechanicalRevolution": 4096,
+          "hasIndexPin": true
+        }
+      },
+      "powerSwitches_0": {
+        "setting": {
+          "PWMFrequency": 20000,
+          "chargeBootCapDuty": "Number.NaN",
+          "chargeBootCapMs": "Number.NaN",
+          "drivingTopology": ""
+        }
+      },
+      "speedSensingSel_0": {
+        "mainSensorParams": {
+          "speedSensorMode": "encoder"
+        }
+      },
+      "driveManagement_0": {
+        "currentReg": {
+          "controlMode": "speed",
+          "autoPI": true,
+          "KpKi": {
+            "P": "Number.NaN",
+            "I": "Number.NaN"
+          },
+          "cutOffFrequency": "Number.NaN",
+          "useMTPA": false,
+          "feedForward": false,
+          "MTPATarget": "Number.NaN"
+        },
+        "speedReg": {
+          "executionRate": "Number.NaN",
+          "targetSpeed": "Number.NaN",
+          "commutationTime": "Number.NaN",
+          "KpKi": {
+            "P": {
+              "num": "Number.NaN",
+              "den": "Number.NaN"
+            },
+            "I": {
+              "num": "Number.NaN",
+              "den": "Number.NaN"
+            }
+          },
+          "autoPI": true
+        },
+        "torqueReg": {
+          "target": "Number.NaN",
+          "KpKi": {
+            "P": {
+              "num": "Number.NaN",
+              "den": "Number.NaN"
+            },
+            "I": {
+              "num": "Number.NaN",
+              "den": "Number.NaN"
+            }
+          }
+        },
+        "fluxReg": {
+          "target": "Number.NaN",
+          "KpKi": {
+            "P": {
+              "num": "Number.NaN",
+              "den": "Number.NaN"
+            },
+            "I": {
+              "num": "Number.NaN",
+              "den": "Number.NaN"
+            }
+          }
+        },
+        "fluxWeak": {
+          "enabled": false,
+          "voltageLimit": "Number.NaN",
+          "KpKi": {
+            "P": {
+              "num": "Number.NaN",
+              "den": "Number.NaN"
+            },
+            "I": {
+              "num": "Number.NaN",
+              "den": "Number.NaN"
+            }
+          }
+        },
+        "posReg": {
+          "executionRate": "Number.NaN",
+          "KpKiKd": {
+            "P": {
+              "num": 10000,
+              "den": 1024
+            },
+            "D": {
+              "num": 1000,
+              "den": 16
+            },
+            "I": {
+              "num": 1000,
+              "den": 32768
+            }
+          }
+        },
+        "debugSettings": {
+          "openLoop": {
+            "enabled": true
+          }
+        },
+        "modulationFlags": {
+          "overModulation": false,
+          "discontinuousPWM": false
+        }
+      },
+      "stageConfig_0": {
+        "potentiometer": {
+          "enable": false,
+          "samplingTime": "Number.NaN"
+        },
+        "esc": {
+          "enabled": false
+        }
+      },
+      "userInterface": {
+        "startStop": {
+          "enabled": false
+        },
+        "mcpv2": {
+          "bufferSize": "Number.NaN",
+          "stlink": {
+            "enabled": false,
+            "dataLog": {
+              "enabled": false,
+              "numberOfSignal": "Number.NaN",
+              "bufferSize": "Number.NaN"
+            }
+          },
+          "usartA": {
+            "enabled": true,
+            "baudrate": "Number.NaN",
+            "channel": "",
+            "tx": "",
+            "rx": "",
+            "UsartIRQn": "",
+            "dataLog": {
+              "enabled": true,
+              "numberOfSignal": "Number.NaN",
+              "bufferSize": "Number.NaN"
+            }
+          },
+          "usartB": {
+            "enabled": false
+          }
+        }
+      },
+      "temperatureSensing_0": {
+        "hw": {
+          "v0": "Number.NaN",
+          "t0": "Number.NaN",
+          "gain": "Number.NaN",
+          "maxSensorTemperature": "Number.NaN"
+        },
+        "protection": {
+          "enable": true,
+          "hysteresis": "Number.NaN",
+          "overTemperatureThreshold": "Number.NaN"
+        },
+        "samplingTime": "Number.NaN",
+        "adc_freq": "Number.NaN",
+        "enable": false
+      }
+    }
+  }
+}
