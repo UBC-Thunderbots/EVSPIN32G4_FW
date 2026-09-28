@@ -21,6 +21,9 @@
 
 /* Private includes ----------------------------------------------------------*/
 /* USER CODE BEGIN Includes */
+#include "mc_api.h"
+#include "mc_config.h"
+#include "mc_interface.h"
 
 /* USER CODE END Includes */
 
@@ -142,6 +145,22 @@ int main(void)
   /* Initialize interrupts */
   MX_NVIC_Init();
   /* USER CODE BEGIN 2 */
+  qd_f_t open_loop_current = {
+    .q = 0.0f,
+    .d = 0.5f
+  };
+
+  MCI_SetOpenLoopCurrentMode(pMCI[M1]);
+  MC_ProgramSpeedRampMotor1_F(0.0f, 0U);
+  MC_SetCurrentReferenceMotor1_F(open_loop_current);
+  (void)MC_StartMotor1();
+
+  HAL_Delay(500U);
+
+  open_loop_current.q = 0.5f;
+  open_loop_current.d = 0.0f;
+  MC_SetCurrentReferenceMotor1_F(open_loop_current);
+  MC_ProgramSpeedRampMotor1_F(1200.0f, 1000U);
 
   /* USER CODE END 2 */
 

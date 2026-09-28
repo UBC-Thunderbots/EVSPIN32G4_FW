@@ -40,10 +40,10 @@
 
 .cache
 
-STM32CubeIDE/.settings/
-STM32CubeIDE/.metadata/
-STM32CubeIDE/Debug/
-STM32CubeIDE/Release/
+EVSPIN32G4_encoder/STM32CubeIDE/.settings/
+EVSPIN32G4_encoder/STM32CubeIDE/.metadata/
+EVSPIN32G4_encoder/STM32CubeIDE/Debug/
+EVSPIN32G4_encoder/STM32CubeIDE/Release/
 
 .settings
 
@@ -52,7 +52,6 @@ EVSPIN32G4_encoder.ioc.bak
 EVSPIN32G4_encoder.ioc.wb
 EVSPIN32G4_encoder.settings
 
-# Project generated in separate folder by MC Workbench 
-# when using EVSPIN32G4_encoder.stwb6 project file 
+# Project generated in a separate folder by MC Workbench when using
+# EVSPIN32G4_encoder.stwb6.
 EVSPIN32G4_encoder/EVSPIN32G4_encoder/
-#I dont think I did this right, but whatever
