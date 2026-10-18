@@ -120,7 +120,11 @@
 /* Encoder alignment */
 #define M1_ALIGNMENT_DURATION               700 /*!< milliseconds */
 #define M1_ALIGNMENT_ANGLE_DEG              90 /*!< degrees [0...359] */
+<<<<<<< Updated upstream
 #define FINAL_I_ALIGNMENT_A                 9.5 /*!< s16A */
+=======
+#define FINAL_I_ALIGNMENT_A                 1 /*!< s16A */
+>>>>>>> Stashed changes
 /* With ALIGNMENT_ANGLE_DEG equal to 90 degrees final alignment */
 /* phase current = (FINAL_I_ALIGNMENT * 1.65/ Av)/(32767 * Rshunt) */
 /* being Av the voltage gain between Rshunt and A/D input */

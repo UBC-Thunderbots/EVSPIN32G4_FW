@@ -145,6 +145,7 @@ int main(void)
   /* Initialize interrupts */
   MX_NVIC_Init();
   /* USER CODE BEGIN 2 */
+<<<<<<< Updated upstream
   qd_f_t open_loop_current = {
     .q = 0.0f,
     .d = 0.5f
@@ -153,8 +154,23 @@ int main(void)
   MCI_SetOpenLoopCurrentMode(pMCI[M1]);
   MC_ProgramSpeedRampMotor1_F(0.0f, 0U);
   MC_SetCurrentReferenceMotor1_F(open_loop_current);
-  (void)MC_StartMotor1();
+=======
 
+  // Wait for gate driver to be ready
+  while (HAL_GPIO_ReadPin(GD_READY_GPIO_Port, GD_READY_Pin) == GPIO_PIN_RESET)
+  {
+    HAL_Delay(1);
+  }
+
+  MC_ProgramSpeedRampMotor1_F(60.0f, 3000U);  // 500 RPM, 3s ramp
+>>>>>>> Stashed changes
+  (void)MC_StartMotor1();
+  HAL_Delay(3000);
+  MC_ProgramSpeedRampMotor1_F(-60.0f, 3000U);
+  HAL_Delay(5000);
+  MC_ProgramSpeedRampMotor1_F(500.0f, 3000U);
+
+<<<<<<< Updated upstream
   HAL_Delay(500U);
 
   open_loop_current.q = 0.5f;
@@ -162,6 +178,8 @@ int main(void)
   MC_SetCurrentReferenceMotor1_F(open_loop_current);
   MC_ProgramSpeedRampMotor1_F(1200.0f, 1000U);
 
+=======
+>>>>>>> Stashed changes
   /* USER CODE END 2 */
 
   /* Infinite loop */
@@ -171,6 +189,30 @@ int main(void)
     /* USER CODE END WHILE */
 
     /* USER CODE BEGIN 3 */
+    MCI_State_t state = MC_GetSTMStateMotor1();
+    if (state == FAULT_OVER || state == FAULT_NOW)
+    {
+      uint16_t faults = MC_GetOccurredFaultsMotor1();
+      // Blink each set fault bit separately, with a long pause between each
+      // Bit: 0=duration 1=overvolt 2=undervolt 3=overtemp 4=startup
+      //      5=speedfdbk 6=overcurr 7=SWerr 10=driverprotection
+      for (int bit = 0; bit < 16; bit++)
+      {
+        if (faults & (1 << bit))
+        {
+          // Blink (bit+1) times for this fault
+          for (int i = 0; i < (bit + 1); i++)
+          {
+            HAL_GPIO_WritePin(GPIOD, GPIO_PIN_2, GPIO_PIN_SET);
+            HAL_Delay(150);
+            HAL_GPIO_WritePin(GPIOD, GPIO_PIN_2, GPIO_PIN_RESET);
+            HAL_Delay(150);
+          }
+          HAL_Delay(2000);  // long pause between different faults
+        }
+      }
+      HAL_Delay(3000);  // extra long pause before repeating
+    }
   }
   /* USER CODE END 3 */
 }
@@ -948,7 +990,12 @@ static void MX_GPIO_Init(void)
   HAL_GPIO_Init(GD_READY_GPIO_Port, &GPIO_InitStruct);
 
   /* USER CODE BEGIN MX_GPIO_Init_2 */
-
+  __HAL_RCC_GPIOD_CLK_ENABLE();
+  GPIO_InitStruct.Pin = GPIO_PIN_2;
+  GPIO_InitStruct.Mode = GPIO_MODE_OUTPUT_PP;
+  GPIO_InitStruct.Pull = GPIO_NOPULL;
+  GPIO_InitStruct.Speed = GPIO_SPEED_FREQ_LOW;
+  HAL_GPIO_Init(GPIOD, &GPIO_InitStruct);
   /* USER CODE END MX_GPIO_Init_2 */
 }
 
