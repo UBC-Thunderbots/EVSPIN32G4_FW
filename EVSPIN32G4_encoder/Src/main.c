@@ -150,11 +150,17 @@ int main(void)
   (void)MC_StartMotor1();
 
   HAL_Delay(1000U);
-  MC_ProgramSpeedRampMotor1_F(100.0f, 10U);
+  MC_ProgramSpeedRampMotor1_F(100.0f, 3000U);
 
   HAL_Delay(5000U);
+  MC_ProgramSpeedRampMotor1_F(-100.0f, 3000U);
+
+  HAL_Delay(5000U);
+  MC_ProgramSpeedRampMotor1_F(-1000.0f, 3000U);
+
+  HAL_Delay(20000U);
   MC_StopMotor1();
-  HAL_Delay(1000U);
+
   /* USER CODE END 2 */
 
   /* Infinite loop */
