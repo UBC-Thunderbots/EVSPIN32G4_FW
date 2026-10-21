@@ -158,7 +158,7 @@ int main(void)
   HAL_Delay(5000U);
   MC_ProgramSpeedRampMotor1_F(-1000.0f, 3000U);
 
-  HAL_Delay(20000U);
+  HAL_Delay(10000U);
   MC_StopMotor1();
 
   /* USER CODE END 2 */
